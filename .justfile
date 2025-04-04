@@ -8,6 +8,16 @@ help:
   @just --list
 
 ##### START DOCKER SECTION #####
+#  Run the container #
+project-initialization:
+  @just down
+  @just build
+  @just up
+  sleep 2
+  {{exec-in-docker}} php bin/console doctrine:database:drop --force
+  {{exec-in-docker}} php bin/console doctrine:database:create
+  {{exec-in-docker}} composer install
+
 # 🏃 Run the container #
 up:
   @docker-compose up -d
@@ -42,7 +52,7 @@ db-migration:
 
 # 🛠️ Execute migration #
 db-migrate:
-  {{exec-in-docker}} php bin/console cache:clear
+  {{exec-in-docker}} php bin/console doctrine:migrations:migrate
 ##### END SYMFONY SECTION #####
 
 

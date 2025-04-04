@@ -28,7 +28,7 @@ services:
     container_name: symfony-db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: symfony
+      MYSQL_DATABASE: app
       MYSQL_USER: symfony
       MYSQL_PASSWORD: symfony
     volumes:
