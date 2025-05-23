@@ -9,6 +9,7 @@ services:
       - ./symfony:/var/www/symfony
     networks:
       - symfony-network
+    user: "1000:1000" # Set the user to match the host user
 
   nginx:
     image: nginx:alpine

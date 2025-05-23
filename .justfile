@@ -30,6 +30,10 @@ down:
 build:
   @docker-compose build
 
+# 🎮 Run {{cmd}} composer #
+composer cmd: 
+  {{exec-in-docker}} composer {{cmd}}
+
 # 🔄 Restart the container #
 restart:
   @just down
