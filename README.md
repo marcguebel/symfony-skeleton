@@ -20,7 +20,7 @@ This is a simple Symfony Skeleton dockerized ready to use application.
 
 3. Run the application:
     ```bash
-    just build
+    just initialization
     ```
 
 ## Features

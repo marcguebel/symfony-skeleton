@@ -14,9 +14,9 @@ project-initialization:
   @just build
   @just up
   sleep 2
+  {{exec-in-docker}} composer install
   {{exec-in-docker}} php bin/console doctrine:database:drop --force
   {{exec-in-docker}} php bin/console doctrine:database:create
-  {{exec-in-docker}} composer install
 
 # 🏃 Run the container #
 up:
